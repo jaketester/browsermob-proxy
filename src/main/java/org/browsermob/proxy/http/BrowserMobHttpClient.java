@@ -573,7 +573,7 @@ public class BrowserMobHttpClient {
                         
                         StringBuilder builder = new StringBuilder();
                         LOG.info(contentType);
-                        if (contentType.startsWith("text/html")) {// || contentType.startsWith("text/plain") || contentType.startsWith("text/javascript") || contentType.startsWith("text/css")) {
+                        if (contentType.startsWith("text/html")|| contentType.startsWith("application/json")) {// || contentType.startsWith("text/plain") || contentType.startsWith("text/javascript") || contentType.startsWith("text/css")) {
                             bytes = copyWithStats(is, os, builder);
                         } else {
                             bytes = copyWithStats(is, os, null);
