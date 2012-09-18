@@ -15,6 +15,7 @@ import org.openqa.selenium.Proxy;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -195,6 +196,10 @@ public class ProxyServer {
 
     public void setCaptureContent(boolean captureContent) {
         client.setCaptureContent(captureContent);
+    }
+    
+    public void setCaptureContentTypes(List <String> captureContentTypes) {
+        client.setCaptureContentTypes(captureContentTypes);
     }
 
     public void clearDNSCache() {

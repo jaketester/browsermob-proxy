@@ -65,6 +65,8 @@ public class BrowserMobHttpClient {
 
     private boolean captureHeaders;
     private boolean captureContent;
+    
+    private List <String> captureContentTypes = null;
 
     private SimulatedSocketFactory socketFactory;
     private TrustingSSLSocketFactory sslSocketFactory;
@@ -573,7 +575,9 @@ public class BrowserMobHttpClient {
                         
                         StringBuilder builder = new StringBuilder();
                         LOG.info(contentType);
-                        if (contentType.startsWith("text/html")|| contentType.startsWith("application/json")) {// || contentType.startsWith("text/plain") || contentType.startsWith("text/javascript") || contentType.startsWith("text/css")) {
+                        //TODO: support arrays of reg exps...
+                        if (captureContentTypes.contains(contentType))  {
+                        		// contentType.startsWith("text/html")|| contentType.startsWith("application/json")) {// || contentType.startsWith("text/plain") || contentType.startsWith("text/javascript") || contentType.startsWith("text/css")) {
                             bytes = copyWithStats(is, os, builder);
                         } else {
                             bytes = copyWithStats(is, os, null);
@@ -914,6 +918,11 @@ public class BrowserMobHttpClient {
     public void setCaptureContent(boolean captureContent) {
         this.captureContent = captureContent;
     }
+    
+    public void setCaptureContentTypes(List <String> captureContentTypes) {
+        this.captureContentTypes = captureContentTypes;
+    }
+
 
     public void setHttpProxy(String httpProxy) {
         String host = httpProxy.split(":")[0];

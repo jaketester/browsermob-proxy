@@ -15,6 +15,8 @@ import org.browsermob.core.har.Har;
 import org.browsermob.proxy.ProxyManager;
 import org.browsermob.proxy.ProxyServer;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -67,8 +69,10 @@ public class ProxyResource {
 
         String captureHeaders = request.param("captureHeaders");
         String captureContent = request.param("captureContent");
+        String captureContentTypes = request.param("captureContentTypes");
         proxy.setCaptureHeaders(Boolean.parseBoolean(captureHeaders));
         proxy.setCaptureContent(Boolean.parseBoolean(captureContent));
+        proxy.setCaptureContentTypes(new ArrayList(Arrays.asList(captureContentTypes.split(","))));
 
         if (oldHar != null) {
             return Reply.with(oldHar).as(Json.class);
