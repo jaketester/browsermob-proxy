@@ -6,6 +6,8 @@ the contenttypes set
 Usage:
 
 ProxyServer.setCaptureContent();
+
 List <String> contentTypes  = Arrays.asList("application/json", "text/html", "text/javascript", "text/css");
+
 ProxyServer.setCaptureContentTypes(contentTypes)
 
