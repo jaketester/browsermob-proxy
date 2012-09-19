@@ -1,7 +1,7 @@
 BrowserMob Proxy
 ================
 This is a fork of a fork of BrowserMob proxy with the added ability to capture response body with 
-the contenttypes specified.
+the contenttypes (i.e. with the HTTP-header "Content-Type: xxxx/yyy") specified.
 
 Additional Usage info:
 -------- 
@@ -10,10 +10,10 @@ Additional Usage info:
 	//We need to capture the content ... 
     proxyServer.setCaptureContent(true);
 	
-	// This are the content types we want to capture, note that we will 
+	// These are the content types to be capture, note that this will 
 	// capture all content that begins with the items in the list, 
-	// so "text/html" will capture all html regardsless of encoding.
-	// and "" will capture anything...
+	// so "text/html" will capture all html regardless of encoding
+	// and "" will capture all content types.
 		
     List <String> contentTypes  = Arrays.asList("application/xml", "text/html", "text/javascript", "text/css");
     ProxyServer.setCaptureContentTypes(contentTypes);
