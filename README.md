@@ -10,7 +10,7 @@ Additional Usage info:
 	//We need to capture the content ... 
     proxyServer.setCaptureContent(true);
 	
-	// These are the content types to be capture, note that this will 
+	// These are the content types to be captured, note that this will 
 	// capture all content that begins with the items in the list, 
 	// so "text/html" will capture all html regardless of encoding
 	// and "" will capture all content types.
