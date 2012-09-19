@@ -576,7 +576,20 @@ public class BrowserMobHttpClient {
                         StringBuilder builder = new StringBuilder();
                         LOG.info(contentType);
                         //TODO: support arrays of reg exps...
-                        if (captureContentTypes.contains(contentType))  {
+                        // captureContentTypes.
+                        
+                      boolean captureContent=false;
+                      
+                       for (String captureContentType: captureContentTypes)
+                       {
+                    	   if (contentType.startsWith(captureContentType)) { 
+                    		   captureContent=true;
+                    		   break;
+                    	   }  	   
+                       }
+                        
+                        
+                        if (captureContent)  {
                         		// contentType.startsWith("text/html")|| contentType.startsWith("application/json")) {// || contentType.startsWith("text/plain") || contentType.startsWith("text/javascript") || contentType.startsWith("text/css")) {
                             bytes = copyWithStats(is, os, builder);
                         } else {
