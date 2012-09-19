@@ -1,7 +1,7 @@
 BrowserMob Proxy
 ================
-This is a fork of a fork of BrowserMob proxy with the added ability to capture response body with 
-the contenttypes (i.e. with the HTTP-header "Content-Type: xxxx/yyy") specified.
+This is a fork of keiouu's fork (https://github.com/keiouu/browsermob-proxy/browsermob-proxy) of BrowserMob proxy 
+with the added ability to capture response body with the contenttypes (i.e. with the HTTP-header "Content-Type: xxxx/yyy") specified.
 
 Additional Usage info:
 -------- 
